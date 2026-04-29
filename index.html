@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>متجر مصغر - منتجات</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  
+    <header class="top-bar">
+        <div class="top-bar-inner">
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="ar">عربي</button>
+                <button class="lang-btn" data-lang="en">English</button>
+            </div>
+            <div class="top-right">
+                <button class="login-btn" id="loginBtn">تسجيل الدخول</button>
+                <button class="cart-btn" id="cartBtn">
+                    <span class="cart-btn-text" data-ar="🛒 عربة الشراء" data-en="🛒 Shopping Cart">🛒 عربة الشراء</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+    <h1 data-ar="🛒 منتجات مميزة" data-en="🛒 Featured Products">🛒 منتجات مميزة</h1>
+
+    <div class="controls">
+        <input type="text" id="searchInput" data-ar-placeholder="ابحث عن منتج..." data-en-placeholder="Search for a product..." placeholder="ابحث عن منتج..."/>
+        <button class="filter-btn" data-filter="under50" data-ar="أقل من ٥٠ دولار" data-en="Under $50">أقل من ٥٠ دولار</button>
+        <button class="filter-btn" data-filter="above100" data-ar="أكثر من ١٠٠ دولار" data-en="Above $100">أكثر من ١٠٠ دولار</button>
+        <button class="filter-btn" data-filter="electronics" data-ar="إلكترونيات" data-en="Electronics">إلكترونيات</button>
+        <button class="filter-btn clear active" data-filter="all" data-ar="الكل" data-en="All">الكل</button>
+    </div>
+
+    <div class="products" id="productsContainer"></div>
+
+    <div class="favorites-section">
+        <h2 data-ar="المفضلة ❤️" data-en="Favorites ❤️">المفضلة ❤️</h2>
+        <div class="favorites" id="favoritesList"></div>
+    </div>
+    </div>
+
+   
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal">
+            <h3 data-ar="تسجيل الدخول" data-en="Login">تسجيل الدخول</h3>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" data-ar-placeholder="البريد الإلكتروني" data-en-placeholder="Email" placeholder="البريد الإلكتروني" required>
+                <input type="password" id="loginPass" data-ar-placeholder="كلمة المرور" data-en-placeholder="Password" placeholder="كلمة المرور" required>
+                <button type="submit" class="submit-btn" data-ar="دخول" data-en="Login">دخول</button>
+            </form>
+            <button class="modal-close" id="loginClose">&times;</button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3 data-ar="عربة الشراء" data-en="Shopping Cart">عربة الشراء</h3>
+            <button class="cart-close" id="cartClose">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span class="cart-total-label" data-ar="الإجمالي:" data-en="Total:">الإجمالي:</span> <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn" data-ar="إتمام الطلب" data-en="Checkout">إتمام الطلب</button>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+    </body>
+    </html>
